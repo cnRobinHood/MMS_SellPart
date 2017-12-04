@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/branwse_goods"
+            android:icon="@drawable/ic_goods"
+            android:title="商品浏览" />
+        <item
+            android:id="@+id/add_goods"
+            android:icon="@drawable/ic_add"
+            android:title="商品添加" />
+        <item
+            android:id="@+id/search_goods"
+            android:icon="@drawable/ic_search"
+            android:title="搜索商品" />
+        <item
+            android:id="@+id/statistics_goods"
+            android:icon="@drawable/ic_statistics"
+            android:title="销售统计" />
+        <item
+            android:id="@+id/setup_goods"
+            android:icon="@drawable/ic_setup"
+            android:title="设置" />
+
+
+    </group>
+
+</menu>

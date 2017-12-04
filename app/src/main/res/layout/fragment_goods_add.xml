@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.cnrobin.mms_sellpart.function.view.fragments.GoodsAddFragment">
+
+    <Spinner
+        android:id="@+id/sp_kind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Spinner>
+
+    <RatingBar
+        android:id="@+id/rb_good"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.5" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textarea"
+        android:hint="商品名称:"
+        android:maxLines="1"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/colorBack" />
+
+    <EditText
+        android:id="@+id/et_count"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/textarea"
+        android:hint="商品数量"
+        android:maxLines="1"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/colorBack" />
+
+    <ImageView
+        android:id="@+id/iv_good"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/icons"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_file" />
+
+    <ImageButton
+        android:id="@+id/ib_upload"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_upload" />
+
+</LinearLayout>

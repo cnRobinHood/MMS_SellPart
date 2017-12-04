@@ -1,0 +1,143 @@
+<com.cnrobin.mms_sellpart.login.loginUtils.BalloonRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/balloonRelativeLayout"
+    style="@style/Theme.AppCompat.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+    <!--播放视频-->
+    <com.cnrobin.mms_sellpart.login.loginUtils.CustomVideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="欢迎登录"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/linear_user"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/welcome"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_shape">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="账号" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:background="#EEEFFF" />
+
+        <EditText
+            android:id="@+id/username_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_passwd"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/linear_user"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_shape">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="密码" />
+
+        <View
+
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:background="#EEEFFF" />
+
+        <EditText
+            android:id="@+id/passwd_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:password="true"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_remeber"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/linear_passwd"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/remeber_passwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记住密码" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_remeber"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:background="#80000000"
+        android:src="@drawable/login_button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/login_button"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册账号" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:background="#EEEFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="忘记密码" />
+
+    </LinearLayout>
+
+
+</com.cnrobin.mms_sellpart.login.loginUtils.BalloonRelativeLayout>
