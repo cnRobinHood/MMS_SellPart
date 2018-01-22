@@ -11,6 +11,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,6 +86,7 @@ public class GoodsAddFragment extends Fragment implements FunctionContect.Browse
                     mClothInfo.setSize("XLL");
                     persenter.setClothInfo(mClothInfo, imagePath);
                     persenter.setCount(name, count);
+                    Log.d(TAG, "onClick: ");
                     Toast.makeText(getContext(), "添加成功", Toast.LENGTH_SHORT).show();
                     goodCount.setText("");
                     goodName.setText("");
@@ -109,7 +111,7 @@ public class GoodsAddFragment extends Fragment implements FunctionContect.Browse
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                rating = new Float(v).toString();
+                rating = Float.toString(v);
 
             }
         });
@@ -126,7 +128,7 @@ public class GoodsAddFragment extends Fragment implements FunctionContect.Browse
         kinds.add("连衣裙");
         kinds.add("西装");
         kinds.add("针织衫");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, kinds);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, kinds);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

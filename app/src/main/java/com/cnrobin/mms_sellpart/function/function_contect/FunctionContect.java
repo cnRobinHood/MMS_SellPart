@@ -22,7 +22,7 @@ public interface FunctionContect {
     interface ResultPresenter extends BasePresenter {
         void setInfo(int count);
 
-        void setCount(String id, String count);
+        void setCount(String id, String count, String size);
     }
 
     interface ResultView extends BaseView {
@@ -41,6 +41,17 @@ public interface FunctionContect {
 
     interface SearchResultView extends BaseView {
         void showResult(List<ClothInfo> clothInfos);
+    }
+
+    interface NeedPredictView extends BaseView {
+        void showNeedPredict(List<ClothInfo> clothInfoList);
+    }
+
+    interface NeedPredictPresenter extends BasePresenter {
+        void getNeedPredict();
+
+        void showNeedPredict(List<ClothInfo> clothInfoList);
+
     }
 
     interface ModelContectPersenter {

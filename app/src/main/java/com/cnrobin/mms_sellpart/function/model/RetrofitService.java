@@ -35,6 +35,9 @@ public interface RetrofitService {
     @GET("repertory")
     Call<ResponseBody> setNewCloseCount(@QueryMap Map<String, String> parmas);
 
+    @GET("needpredict")
+    Call<List<ClothInfo>> getNeedPredict();
+
 
     @Multipart
     @POST("clothinfo")

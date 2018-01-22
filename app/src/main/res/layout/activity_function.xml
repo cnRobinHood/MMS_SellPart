@@ -5,36 +5,39 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/icons"
+    android:background="@color/colorPrimary"
     tools:context="com.cnrobin.mms_sellpart.function.view.FunctionActivity">
 
-    <android.support.design.widget.CoordinatorLayout
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
+
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="?actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlways">
+                android:minHeight="?actionBarSize">
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/tv_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:gravity="center"
-                        android:text="商品浏览"
+                        tools:text="商品浏览"
                         android:textSize="20sp" />
 
                     <ImageView
@@ -55,26 +58,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/linear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical" />
         </LinearLayout>
 
-    </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
-
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-
-        app:headerLayout="@layout/nav_header"
+        android:background="#adc"
         app:menu="@menu/nav_menu" />
 
 </android.support.v4.widget.DrawerLayout>

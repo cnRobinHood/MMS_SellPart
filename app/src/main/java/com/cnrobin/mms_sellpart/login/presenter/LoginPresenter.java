@@ -1,6 +1,7 @@
 package com.cnrobin.mms_sellpart.login.presenter;
 
 import com.cnrobin.mms_sellpart.login.login_contect.LoginConnect;
+import com.cnrobin.mms_sellpart.login.model.User;
 import com.cnrobin.mms_sellpart.login.model.UserInfoModel;
 
 /**
@@ -23,6 +24,11 @@ public class LoginPresenter implements LoginConnect.LoginPresenter {
     public void getPassCheck(String username) {
         mUserInfoModel.getUserInfo(username);
 
+    }
+
+    @Override
+    public int setUserCount(User user) {
+        return mUserInfoModel.registerCount(user);
     }
 
     @Override

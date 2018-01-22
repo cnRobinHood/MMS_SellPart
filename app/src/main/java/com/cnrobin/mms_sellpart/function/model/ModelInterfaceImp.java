@@ -89,7 +89,7 @@ public class ModelInterfaceImp implements ModelInterface {
                 .addInterceptor(loggingInterceptor)
                 .build();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        retrofit = new Retrofit.Builder().baseUrl(baseURL).client(client).addConverterFactory(GsonConverterFactory.create()).build();
+        retrofit = new Retrofit.Builder().baseUrl(baseURL).addConverterFactory(GsonConverterFactory.create()).client(client).build();
         service = retrofit.create(RetrofitService.class);
         Map<String, String> map = new HashMap<>();
         map.put("kind", kind);
@@ -191,7 +191,7 @@ public class ModelInterfaceImp implements ModelInterface {
         map.put("type", "2");
         map.put("id", id);
         map.put("count", count);
-        map.put("size", "XXL");
+        map.put("size", "XL");
         map.put("count", count);
         map.put("addr", "28206");
         Call call = service.setNewCloseCount(map);

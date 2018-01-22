@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@null"
-            android:password="true"
+            android:inputType="textPassword"
             android:singleLine="true" />
     </LinearLayout>
 
@@ -121,6 +121,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="注册账号" />
@@ -132,6 +133,7 @@
             android:background="#EEEFFF" />
 
         <TextView
+            android:id="@+id/tv_forgetpw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"

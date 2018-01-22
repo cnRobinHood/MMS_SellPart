@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group1">
         <item
             android:id="@+id/branwse_goods"
             android:icon="@drawable/ic_goods"
@@ -13,10 +15,18 @@
             android:id="@+id/search_goods"
             android:icon="@drawable/ic_search"
             android:title="搜索商品" />
+    </group>
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group2">
         <item
             android:id="@+id/statistics_goods"
             android:icon="@drawable/ic_statistics"
             android:title="销售统计" />
+        <item
+            android:id="@+id/predict_goods"
+            android:icon="@drawable/ic_brain"
+            android:title="进货预测" />
         <item
             android:id="@+id/setup_goods"
             android:icon="@drawable/ic_setup"
@@ -24,5 +34,4 @@
 
 
     </group>
-
 </menu>

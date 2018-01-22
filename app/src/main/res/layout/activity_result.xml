@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c6d6d6">
+    android:background="#c6d6d6"
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
 
@@ -43,16 +44,6 @@
                         android:gravity="left"
                         android:textSize="18sp" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="30dp"
-                        android:layout_weight="1"
-                        android:scaleType="fitEnd"
-                        android:src="@drawable/ic_share"
-
-                        />
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
 
@@ -166,55 +157,104 @@
             </FrameLayout>
         </LinearLayout>
 
-        <RelativeLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择大小分类：" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center_horizontal">
-
-                <Button
-                    android:id="@+id/bt_cut"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
-                    android:background="#f6f9f9"
-                    android:text="减少"
-                    android:textColor="@color/secondary_text" />
-
-                <EditText
-                    android:id="@+id/et_left"
-                    android:layout_width="60dp"
-                    android:layout_height="25dp"
-                    android:layout_margin="3dp"
-                    android:background="@drawable/btshape"
-                    android:editable="false"
-                    android:gravity="center" />
-
-                <Button
-                    android:id="@+id/bt_ins"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="#f6f9f9"
-                    android:text="增加"
-                    android:textColor="@color/secondary_text" />
-
-
-            </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/bt_submit"
+                android:id="@+id/bt_xl"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_size"
+                android:text="XL"
+                android:textColor="@color/secondary_text" />
+
+            <Button
+                android:id="@+id/bt_xxl"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_size"
+                android:text="XXL"
+                android:textColor="@color/secondary_text" />
+
+            <Button
+                android:id="@+id/bt_xxxl"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_size"
+                android:text="XXXL"
+                android:textColor="@color/secondary_text" />
+
+            <Button
+                android:id="@+id/bt_xxxxl"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_size"
+                android:text="XXXXL"
+                android:textColor="@color/secondary_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/bt_cut"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:background="#f6f9f9"
-                android:text="提交"
+                android:text="减少"
                 android:textColor="@color/secondary_text" />
-        </RelativeLayout>
+
+            <EditText
+                android:id="@+id/et_left"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/btshape"
+                android:gravity="center"
+                android:inputType="none" />
+
+            <Button
+                android:id="@+id/bt_ins"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="3dp"
+                android:background="#f6f9f9"
+                android:text="增加"
+                android:textColor="@color/secondary_text" />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_marginTop="5dp"
+            android:id="@+id/bt_submit"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#f6f9f9"
+            android:text="提交"
+            android:textColor="@color/secondary_text" />
+
     </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

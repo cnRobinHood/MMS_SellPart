@@ -2,7 +2,11 @@ package com.cnrobin.mms_sellpart.function.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,14 +19,22 @@ import com.cnrobin.mms_sellpart.R;
 import com.cnrobin.mms_sellpart.function.function_contect.FunctionContect;
 import com.cnrobin.mms_sellpart.function.presenter.ResultPresenterImp;
 
-public class ResultActivity extends AppCompatActivity implements FunctionContect.ResultView {
+public class ResultActivity extends AppCompatActivity implements FunctionContect.ResultView, View.OnClickListener {
     private TextView tvName;
     private TextView tvDesc;
     private Button btCut;
     private Button btIns;
     private Button btSubmit;
+    private Button btXL;
+    private Button btXXL;
+    private Button btXXXL;
+    private Button btXXXXL;
     private EditText etCount;
     private ResultPresenterImp presenter;
+    private ActionBar actionBar;
+    private String id;
+    private String size;
+    private static final String TAG = "ResultActivity";
 
     public ResultActivity() {
         super();
@@ -47,24 +59,35 @@ public class ResultActivity extends AppCompatActivity implements FunctionContect
         btCut = (Button) findViewById(R.id.bt_cut);
         btIns = (Button) findViewById(R.id.bt_ins);
         btSubmit = (Button) findViewById(R.id.bt_submit);
+        btXL = findViewById(R.id.bt_xl);
+        btXXL = findViewById(R.id.bt_xxl);
+        btXXXL = findViewById(R.id.bt_xxxl);
+        btXXXXL = findViewById(R.id.bt_xxxxl);
+        btXL.setOnClickListener(this);
+        btXXL.setOnClickListener(this);
+        btXXXL.setOnClickListener(this);
+        btXXXXL.setOnClickListener(this);
+
         etCount = (EditText) findViewById(R.id.et_left);
         setPresenter(new ResultPresenterImp(this));
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("image");
         String image = bundle.getString("image");
-        final String id = bundle.getString("id");
+        id = bundle.getString("id");
+        Log.d(TAG, "onCreate: " + id);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+
+        }
         tvName.setText(id);
         tvDesc.setText("这是个好衣服");
-        presenter.getCount(id);
+        presenter.getCount(id, "XL");
         ImageView iv_cloth = (ImageView) findViewById(R.id.cloth_img);
         Glide.with(this).load(image).into(iv_cloth);
-        btSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.setCount(id, etCount.getText().toString());
-                Toast.makeText(ResultActivity.this, "更新成功了哟", Toast.LENGTH_SHORT).show();
-            }
-        });
+        btSubmit.setOnClickListener(this);
         btIns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +102,62 @@ public class ResultActivity extends AppCompatActivity implements FunctionContect
                 etCount.setText("" + (--temp));
             }
         });
+        btXL.setEnabled(false);
+        btXXL.setEnabled(true);
+        btXXXL.setEnabled(true);
+        btXXXXL.setEnabled(true);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+        }
+        return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bt_submit:
+                presenter.setCount(id, etCount.getText().toString(), size);
+                Log.d(TAG, "onClick: " + etCount.getText().toString());
+                Toast.makeText(ResultActivity.this, "更新成功了哟", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_xl:
+                size = "XL";
+                presenter.getCount(id, size);
+                btXL.setEnabled(false);
+                btXXL.setEnabled(true);
+                btXXXL.setEnabled(true);
+                btXXXXL.setEnabled(true);
+                break;
+            case R.id.bt_xxl:
+                size = "XXL";
+                presenter.getCount(id, size);
+                btXL.setEnabled(true);
+                btXXL.setEnabled(false);
+                btXXXL.setEnabled(true);
+                btXXXXL.setEnabled(true);
+                break;
+            case R.id.bt_xxxl:
+                size = "XXXL";
+                presenter.getCount(id, size);
+
+                btXL.setEnabled(true);
+                btXXL.setEnabled(true);
+                btXXXL.setEnabled(false);
+                btXXXXL.setEnabled(true);
+                break;
+            case R.id.bt_xxxxl:
+                size = "XXXXL";
+                presenter.getCount(id, size);
+                btXL.setEnabled(true);
+                btXXL.setEnabled(true);
+                btXXXL.setEnabled(true);
+                btXXXXL.setEnabled(false);
+                break;
+        }
+    }
 }

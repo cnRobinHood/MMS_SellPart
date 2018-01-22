@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ccc"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="欢迎注册"
+        android:textColorHint="#666"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/register_uname"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:hint="输入账号"
+        android:lines="1"
+        android:textColorHint="#666"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/register_phoneNum"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:hint="输入手机号"
+        android:lines="1"
+
+        android:textColorHint="#666"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/register_focus"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:hint="输入座右铭"
+        android:lines="1"
+
+        android:textColorHint="#666"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/register_passwd"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:hint="输入密码"
+        android:inputType="textPassword"
+
+        android:lines="1"
+        android:textColorHint="#666"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/resitting_button"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/shape_register"
+            android:text="重置" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/shape_register"
+            android:text="注册" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -21,8 +21,8 @@ public class ResultPresenterImp implements FunctionContect.ResultPresenter {
 
     }
 
-    public void getCount(String id) {
-        resultModel.getCount(id);
+    public void getCount(String id, String size) {
+        resultModel.getCount(id, size);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class ResultPresenterImp implements FunctionContect.ResultPresenter {
     }
 
     @Override
-    public void setCount(String id, String count) {
-        resultModel.setCount(id, count);
+    public void setCount(String id, String count, String size) {
+        resultModel.setCount(id, count, size);
 
     }
 }

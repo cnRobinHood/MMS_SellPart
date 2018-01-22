@@ -25,9 +25,10 @@ public class UserInfoModel {
     private static final String baseUrl = "http://123.207.8.147:8080/GoodsSystemServe/";
     private User user;
     private LoginPresenter mLoginPresenter;
-    public Handler handler = new Handler() {
+    public Handler handler = new Handler(new Handler.Callback() {
+
         @Override
-        public void handleMessage(Message msg) {
+        public boolean handleMessage(Message msg) {
             if (msg.what == 1) {
                 mLoginPresenter.setPassDataInterface(new LoginConnect.PassDataInterface() {
                     @Override
@@ -41,8 +42,10 @@ public class UserInfoModel {
                     }
                 });
             }
+            return false;
         }
-    };
+
+    });
 
     public UserInfoModel(LoginPresenter mLoginPresenter) {
         this.mLoginPresenter = mLoginPresenter;
@@ -80,5 +83,30 @@ public class UserInfoModel {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public int registerCount(User user) {
+        final Integer result;
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).build();
+        APIInterface apiInterface = retrofit.create(APIInterface.class);
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("type", "3");
+        hashMap.put("uname", user.getUsername());
+        hashMap.put("passwd", user.getPsword());
+        hashMap.put("focus", user.getFoucs());
+        hashMap.put("phoneNum", user.getPhoneNum());
+        Call call = apiInterface.setUserInfo(hashMap);
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+        return 1;
     }
 }

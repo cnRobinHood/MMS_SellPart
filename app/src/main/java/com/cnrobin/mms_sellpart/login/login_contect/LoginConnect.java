@@ -17,6 +17,8 @@ public interface LoginConnect {
 
     interface LoginPresenter extends BasePresenter {
         void getPassCheck(String username);
+
+        int setUserCount(User user);
     }
 
     interface PassDataInterface {

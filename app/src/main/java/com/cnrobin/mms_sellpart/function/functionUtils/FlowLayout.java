@@ -122,10 +122,7 @@ public class FlowLayout extends ViewGroup {
             if (views.size() == 0) {
                 return true;
             }
-            if (view.getMeasuredWidth() > (maxWidth - usedWidth - horizontalSpace)) {
-                return false;
-            }
-            return true;
+            return view.getMeasuredWidth() <= (maxWidth - usedWidth - horizontalSpace);
         }
 
         public void layout(int t, int l) {

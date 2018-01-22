@@ -1,15 +1,40 @@
 package com.cnrobin.mms_sellpart.login.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by cnrobin on 17-10-17.
  * Just Enjoy It!!!
  */
 
-public class User {
+public class User implements Parcelable {
+
+    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
     private String username;
     private String psword;
     private String foucs;
     private String phoneNum;
+
+    public User() {
+    }
+
+    protected User(Parcel in) {
+        this.username = in.readString();
+        this.psword = in.readString();
+        this.foucs = in.readString();
+        this.phoneNum = in.readString();
+    }
 
     public String getUsername() {
         return username;
@@ -41,5 +66,18 @@ public class User {
 
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.username);
+        dest.writeString(this.psword);
+        dest.writeString(this.foucs);
+        dest.writeString(this.phoneNum);
     }
 }

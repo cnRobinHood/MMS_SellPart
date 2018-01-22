@@ -2,6 +2,7 @@ package com.cnrobin.mms_sellpart.login.model;
 
 import java.util.Map;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
@@ -14,4 +15,7 @@ import retrofit2.http.QueryMap;
 public interface APIInterface {
     @GET("admininfo")
     Call<User> getUserInfo(@QueryMap Map<String, String> parmas);
+
+    @GET("admininfo")
+    Call<ResponseBody> setUserInfo(@QueryMap Map<String, String> parmas);
 }

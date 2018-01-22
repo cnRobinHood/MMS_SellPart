@@ -12,8 +12,8 @@ import android.widget.ImageView;
 
 import com.cnrobin.mms_sellpart.login.view.LoginActivity;
 import com.cnrobin.mms_sellpart.util.ActivityCollector;
-
 import static android.view.animation.Animation.RELATIVE_TO_SELF;
+
 
 public class MainActivity extends AppCompatActivity {
     static {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         }
         ActivityCollector.addActivity(this);
         // Example of a call to a native method
-        imageView = (ImageView) findViewById(R.id.img_doge);
+        imageView = findViewById(R.id.img_doge);
         setAnimation();
         handler.postDelayed(new Runnable() {
             @Override
