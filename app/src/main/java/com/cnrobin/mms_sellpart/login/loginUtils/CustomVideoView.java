@@ -16,7 +16,6 @@ public class CustomVideoView extends VideoView {
     public CustomVideoView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
-
     public CustomVideoView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }

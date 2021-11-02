@@ -25,7 +25,7 @@ import retrofit2.Retrofit;
 
 public class ResultModel {
     private static final String TAG = "ResultModel";
-    private static final String baseURL = "http://123.207.8.147:8080/GoodsSystemServe/";
+    private static final String baseURL = "http://47.112.27.122:8080/GoodsSystemServe/";
     private ResultPresenterImp presenter;
     private Retrofit retrofit;
     private RetrofitService service;

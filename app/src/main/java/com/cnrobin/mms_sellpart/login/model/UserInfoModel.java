@@ -7,8 +7,12 @@ import android.util.Log;
 import com.cnrobin.mms_sellpart.login.login_contect.LoginConnect;
 import com.cnrobin.mms_sellpart.login.presenter.LoginPresenter;
 
+import java.io.IOException;
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserInfoModel {
     private static final String TAG = "UserInfoModel";
-    private static final String baseUrl = "http://123.207.8.147:8080/GoodsSystemServe/";
+    private static final String baseUrl = "http://192.168.1.103:8080/GoodSystemServer/";
     private User user;
     private LoginPresenter mLoginPresenter;
     public Handler handler = new Handler(new Handler.Callback() {
@@ -52,7 +56,21 @@ public class UserInfoModel {
     }
 
     public void getUserInfo(String username) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
+        Interceptor interceptor = new Interceptor() {
+            @Override
+            public okhttp3.Response intercept(Chain chain) throws IOException {
+                Request request = chain.request();
+                String url = request.url().toString();
+                String logStr = url;
+                Log.d("Constant",  " request url: " + logStr);
+                return chain.proceed(request);
+            }
+        };
+        OkHttpClient.Builder builder = new OkHttpClient().newBuilder()
+                .addInterceptor(interceptor);
+        OkHttpClient client = builder.build();
+        Retrofit retrofit = new Retrofit.Builder().client(client).baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
+
         APIInterface apiInterface = retrofit.create(APIInterface.class);
         HashMap<String, String> hashMap = new HashMap();
         hashMap.put("type", "1");
@@ -86,8 +104,22 @@ public class UserInfoModel {
     }
 
     public int registerCount(User user) {
+        Interceptor interceptor = new Interceptor() {
+            @Override
+            public okhttp3.Response intercept(Chain chain) throws IOException {
+                Request request = chain.request();
+                String url = request.url().toString();
+                String logStr = url;
+                Log.d("Constant",  " request url: " + logStr);
+                return chain.proceed(request);
+            }
+        };
+        OkHttpClient.Builder builder = new OkHttpClient().newBuilder()
+                .addInterceptor(interceptor);
+        OkHttpClient client = builder.build();
         final Integer result;
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).build();
+        Retrofit retrofit = new Retrofit.Builder().client(client).baseUrl(baseUrl).build();
+        Log.d(TAG, "registerCount: "+baseUrl);
         APIInterface apiInterface = retrofit.create(APIInterface.class);
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("type", "3");
@@ -99,12 +131,13 @@ public class UserInfoModel {
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
-
+                Log.d(TAG, "onResponse: success");
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
-
+                Log.d(TAG, "onFailure: "+"regisiter");
+                Log.d(TAG, "onFailure: "+t.toString());
             }
         });
         return 1;

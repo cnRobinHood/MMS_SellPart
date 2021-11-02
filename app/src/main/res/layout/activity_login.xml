@@ -4,14 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center">
-    <!--播放视频-->
-    <com.cnrobin.mms_sellpart.login.loginUtils.CustomVideoView
-        android:id="@+id/videoView"
+<!--    &lt;!&ndash;播放视频&ndash;&gt;-->
+<!--    <com.cnrobin.mms_sellpart.login.loginUtils.CustomVideoView-->
+<!--        android:id="@+id/videoView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:clickable="false"-->
+<!--        android:focusable="false"-->
+<!--        android:focusableInTouchMode="false" />-->
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:src="@drawable/background"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/welcome"

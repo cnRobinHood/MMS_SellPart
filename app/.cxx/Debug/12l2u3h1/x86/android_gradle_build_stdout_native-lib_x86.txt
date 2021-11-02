@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/liu/AndroidStudioProjects/MMS_SellPart/app/.cxx/Debug/12l2u3h1/x86'
+ninja: no work to do.

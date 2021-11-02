@@ -1,0 +1,3 @@
+/Users/liu/AndroidStudioProjects/MMS_SellPart/app/.cxx/Debug/12l2u3h1/x86/CMakeFiles/rebuild_cache.dir
+/Users/liu/AndroidStudioProjects/MMS_SellPart/app/.cxx/Debug/12l2u3h1/x86/CMakeFiles/edit_cache.dir
+/Users/liu/AndroidStudioProjects/MMS_SellPart/app/.cxx/Debug/12l2u3h1/x86/CMakeFiles/native-lib.dir

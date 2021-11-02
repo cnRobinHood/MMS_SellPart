@@ -6,7 +6,7 @@
     android:background="#c6d6d6"
     android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
 
         android:layout_width="match_parent"
         android:layout_height="320dp">
@@ -17,7 +17,7 @@
             android:layout_height="320dp"
             android:orientation="vertical">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
@@ -45,7 +45,7 @@
                         android:textSize="18sp" />
 
                 </LinearLayout>
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
             <ImageView
                 android:id="@+id/cloth_img"
@@ -56,7 +56,7 @@
                 android:scaleType="fitXY" />
         </LinearLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <LinearLayout

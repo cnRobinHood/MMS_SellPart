@@ -2,9 +2,9 @@ package com.cnrobin.mms_sellpart.function.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cnrobin.mms_sellpart.R;
 import com.cnrobin.mms_sellpart.function.adapters.ResultAdapter;

@@ -34,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ModelInterfaceImp implements ModelInterface {
     private static final String TAG = "ModelInterfaceImp";
-    private static final String baseURL = "http://123.207.8.147:8080/GoodsSystemServe/";
+    private static final String baseURL = "http://47.112.27.122:8080/GoodsSystemServe/";
     private List<ClothInfo> clothInfos = new ArrayList<>();
     private BrowsePersenterImp persenter;
     private Retrofit retrofit;

@@ -14,7 +14,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
-        android:text="服装仓库"
+        android:text="美食推荐"
         android:textSize="35sp" />
 
     <ImageView

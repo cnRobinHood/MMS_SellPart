@@ -6,6 +6,7 @@ import android.os.Message;
 import com.cnrobin.mms_sellpart.function.entity.ClothInfo;
 import com.cnrobin.mms_sellpart.function.presenter.NeedPredicePresenterImpl;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,17 +24,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NeedPredictModel {
     private NeedPredicePresenterImpl presenter;
     private List<ClothInfo> clothInfoList = new ArrayList<>();
-    private static final String baseURL = "http://123.207.8.147:8080/GoodsSystemServe/";
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 1:
-                    presenter.showNeedPredict(clothInfoList);
-
-            }
-        }
-    };
+    private static final String baseURL = "http://47.112.27.122:8080/GoodsSystemServe/";
+    private Handler handler = new MyHandler(this);
 
     public NeedPredictModel(NeedPredicePresenterImpl presenter) {
         this.presenter = presenter;
@@ -57,5 +49,22 @@ public class NeedPredictModel {
 
             }
         });
+    }
+
+      static class MyHandler extends Handler {
+        WeakReference<NeedPredictModel> mNeedPredictModelWeakReference;
+        public MyHandler(NeedPredictModel needPredictModel){
+            this.mNeedPredictModelWeakReference = new WeakReference(needPredictModel);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1:
+                   mNeedPredictModelWeakReference.get().presenter.showNeedPredict(mNeedPredictModelWeakReference.get().clothInfoList);
+                    break;
+
+            }
+        }
     }
 }

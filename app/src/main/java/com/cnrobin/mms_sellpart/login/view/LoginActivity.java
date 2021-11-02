@@ -9,10 +9,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
@@ -30,11 +30,11 @@ import com.cnrobin.mms_sellpart.login.model.User;
 import com.cnrobin.mms_sellpart.login.presenter.LoginPresenter;
 import com.cnrobin.mms_sellpart.util.ActivityCollector;
 
-public class LoginActivity extends AppCompatActivity implements LoginConnect.LoginView, MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener, View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements LoginConnect.LoginView, View.OnClickListener {
     private static final int TIME = 200;
     Handler mHandler = new Handler();
     private LoginPresenter mPresenter;
-    private VideoView mVideoView;
+    //private VideoView mVideoView;
     private EditText username;
     private EditText passWd;
     private TextView mTextViewRegister;
@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements LoginConnect.Log
         ActivityCollector.addActivity(this);
         mTextViewForgetPW = (TextView) findViewById(R.id.tv_forgetpw);
         mTextViewRegister = (TextView) findViewById(R.id.tv_register);
-        mVideoView = (VideoView) findViewById(R.id.videoView);
+        //mVideoView = (VideoView) findViewById(R.id.videoView);
         mBalloonRelativeLayout = (BalloonRelativeLayout) findViewById(R.id.balloonRelativeLayout);
         username = (EditText) findViewById(R.id.username_log);
         passWd = (EditText) findViewById(R.id.passwd_log);
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity implements LoginConnect.Log
         remeberPasswd = (CheckBox) findViewById(R.id.remeber_passwd);
         mPresenter = new LoginPresenter(this);
         loginButton.setOnClickListener(this);
-        initVideoView();
+        //initVideoView();
         sp = getSharedPreferences("passwd", MODE_PRIVATE);
         if (!"".equals(sp.getString("user", ""))) {
             username.setText(sp.getString("user", ""));
@@ -173,27 +173,27 @@ public class LoginActivity extends AppCompatActivity implements LoginConnect.Log
         }
     }
 
-    private void initVideoView() {
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.mqr));
-        mVideoView.setOnPreparedListener(this);
-        mVideoView.setOnCompletionListener(this);
-
-    }
-
-    @Override
-    public void onPrepared(MediaPlayer mp) {
-        //开始播放
-        mVideoView.start();
-        mHandler.postDelayed(runnable, TIME);
-    }
-
-    //播放结束
-    @Override
-    public void onCompletion(MediaPlayer mp) {
-        //开始播放
-        mVideoView.start();
-    }
+//    private void initVideoView() {
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.mqr));
+//        mVideoView.setOnPreparedListener(this);
+//        mVideoView.setOnCompletionListener(this);
+//
+//    }
+//
+//    @Override
+//    public void onPrepared(MediaPlayer mp) {
+//        //开始播放
+//        mVideoView.start();
+//        mHandler.postDelayed(runnable, TIME);
+//    }
+//
+//    //播放结束
+//    @Override
+//    public void onCompletion(MediaPlayer mp) {
+//        //开始播放
+//        mVideoView.start();
+//    }
 
     @Override
     public void onBackPressed() {
