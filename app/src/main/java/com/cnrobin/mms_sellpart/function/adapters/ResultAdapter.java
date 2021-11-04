@@ -41,9 +41,9 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 Intent intent = new Intent(mContext, ResultActivity.class);
                 Bundle imageBundle = new Bundle();
                 int position = holder.getAdapterPosition();
-                imageBundle.putString("image", clothInfos.get(position).getImages());
+                imageBundle.putString("image", clothInfos.get(position).getFOOD_IMG());
                 imageBundle.putString("id", clothInfos.get(position).getID());
-                imageBundle.putString("stars", clothInfos.get(position).getStars());
+                imageBundle.putString("stars", clothInfos.get(position).getFOOD_RATING());
                 intent.putExtra("image", imageBundle);
                 mContext.startActivity(intent);
             }
@@ -54,7 +54,7 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         ClothInfo clothInfo = clothInfos.get(position);
-        Glide.with(mContext).load(clothInfo.getImages()).into(((MyViewHolder) viewHolder).itemImg);
+        Glide.with(mContext).load(clothInfo.getFOOD_IMG()).into(((MyViewHolder) viewHolder).itemImg);
         ((MyViewHolder) viewHolder).itemText.setText(clothInfo.getID());
     }
 

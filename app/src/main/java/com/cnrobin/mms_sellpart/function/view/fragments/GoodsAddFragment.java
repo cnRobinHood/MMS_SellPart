@@ -77,13 +77,13 @@ public class GoodsAddFragment extends Fragment implements FunctionContect.Browse
                 String dsrc = "这是个好好地东西";
                 String count = goodCount.getText().toString();
                 if (imagePath != null && !"".equals(imagePath)) {
-                    mClothInfo.setImages("http://123.207.8.147:8080/GoodsSystemServe/clothimages/" + imagePath.substring(imagePath.lastIndexOf("/") + 1));
-                    mClothInfo.setKinds(kind);
-                    mClothInfo.setID(name);
-                    mClothInfo.setLining(dsrc);
-                    mClothInfo.setSeason("秋季");
-                    mClothInfo.setStars(rating);
-                    mClothInfo.setSize("XLL");
+//                    mClothInfo.setImages("http://123.207.8.147:8080/GoodsSystemServe/clothimages/" + imagePath.substring(imagePath.lastIndexOf("/") + 1));
+//                    mClothInfo.setKinds(kind);
+//                    mClothInfo.setID(name);
+//                    mClothInfo.setLining(dsrc);
+//                    mClothInfo.setSeason("秋季");
+//                    mClothInfo.setStars(rating);
+//                    mClothInfo.setSize("XLL");
                     persenter.setClothInfo(mClothInfo, imagePath);
                     persenter.setCount(name, count);
                     Log.d(TAG, "onClick: ");

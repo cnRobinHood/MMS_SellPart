@@ -54,9 +54,9 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     Intent intent = new Intent(mContext, ResultActivity.class);
                     Bundle imageBundle = new Bundle();
                     int position = holder.getAdapterPosition();
-                    imageBundle.putString("image", list.get(position - 1).getImages());
+                    imageBundle.putString("image", list.get(position - 1).getFOOD_IMG());
                     imageBundle.putString("id", list.get(position - 1).getID());
-                    imageBundle.putString("stars", list.get(position - 1).getStars());
+                    imageBundle.putString("stars", list.get(position - 1).getFOOD_RATING());
                     intent.putExtra("image", imageBundle);
                     mContext.startActivity(intent);
                 }
@@ -71,25 +71,25 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         if (viewType == HEADER) {
             ((HeaderHolder) holder).titleText.setText(bundle.getString("kind"));
             switch (bundle.getString("kind")) {
-                case "风衣":
+                case "广东菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.fx);
                     break;
-                case "半身裙":
+                case "日本料理":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.bsq);
                     break;
-                case "长裤":
+                case "四川菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.ck);
                     break;
-                case "衬衣":
+                case "湖南菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.cy);
                     break;
-                case "连衣裙":
+                case "山东菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.lyq);
                     break;
-                case "西装":
+                case "意大利菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.xz);
                     break;
-                case "针织衫":
+                case "河南菜":
                     ((HeaderHolder) holder).titleImage.setImageResource(R.drawable.zzs);
                     break;
             }
@@ -97,7 +97,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         } else if (viewType == ITEM)
             if (position != 0) {
                 ClothInfo clothInfo = list.get(position - 1);
-                Glide.with(mContext).load(clothInfo.getImages()).into(((ItemHolder) holder).itemImg);
+                Glide.with(mContext).load(clothInfo.getFOOD_IMG()).into(((ItemHolder) holder).itemImg);
                 ((ItemHolder) holder).itemText.setText(clothInfo.getID());
             }
     }

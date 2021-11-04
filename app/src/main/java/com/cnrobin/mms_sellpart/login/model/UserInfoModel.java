@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserInfoModel {
     private static final String TAG = "UserInfoModel";
-    private static final String baseUrl = "http://192.168.1.103:8080/GoodSystemServer/";
+    private static final String baseUrl = "http://8.130.24.171:8080/GoodSystemServer/";
     private User user;
     private LoginPresenter mLoginPresenter;
     public Handler handler = new Handler(new Handler.Callback() {

@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NeedPredictModel {
     private NeedPredicePresenterImpl presenter;
     private List<ClothInfo> clothInfoList = new ArrayList<>();
-    private static final String baseURL = "http://47.112.27.122:8080/GoodsSystemServe/";
+    private static final String baseURL = "http://8.130.24.171:8080/GoodSystemServer/";
     private Handler handler = new MyHandler(this);
 
     public NeedPredictModel(NeedPredicePresenterImpl presenter) {

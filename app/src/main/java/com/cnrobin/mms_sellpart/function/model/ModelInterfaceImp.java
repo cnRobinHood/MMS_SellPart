@@ -34,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ModelInterfaceImp implements ModelInterface {
     private static final String TAG = "ModelInterfaceImp";
-    private static final String baseURL = "http://47.112.27.122:8080/GoodsSystemServe/";
+    private static final String baseURL = "http://8.130.24.171:8080/GoodSystemServer/";
     private List<ClothInfo> clothInfos = new ArrayList<>();
     private BrowsePersenterImp persenter;
     private Retrofit retrofit;
@@ -133,12 +133,12 @@ public class ModelInterfaceImp implements ModelInterface {
         Map<String, String> map = new HashMap<>();
         map.put("type", "3");
         map.put("id", clothInfo.getID());
-        map.put("kind", clothInfo.getKinds());
-        map.put("star", clothInfo.getStars());
-        map.put("lining", clothInfo.getLining());
-        map.put("season", clothInfo.getSeason());
-        map.put("size", clothInfo.getSize());
-        map.put("image", clothInfo.getImages());
+//        map.put("kind", clothInfo.getKinds());
+//        map.put("star", clothInfo.getStars());
+//        map.put("lining", clothInfo.getLining());
+//        map.put("season", clothInfo.getSeason());
+//        map.put("size", clothInfo.getSize());
+//        map.put("image", clothInfo.getImages());
         Call<ResponseBody> call = service.addClothInfo(map);
         call.enqueue(new Callback<ResponseBody>() {
             @Override

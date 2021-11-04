@@ -19,7 +19,7 @@ public class GoodsBrowseFragment extends Fragment {
     ArrayList<Fragment> fragments;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private String[] kinds = {"风衣", "西装", "衬衣", "针织衫", "连衣裙", "半身裙", "长裤"};
+    private String[] kinds = {"广东菜", "四川菜", "湖南菜", "日本料理", "意大利菜", "河南菜", "山东菜"};
 
 
     public GoodsBrowseFragment() {
